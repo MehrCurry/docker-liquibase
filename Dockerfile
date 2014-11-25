@@ -11,5 +11,6 @@ ADD http://central.maven.org/maven2/com/h2database/h2/1.4.182/h2-1.4.182.jar /op
 ADD http://central.maven.org/maven2/org/postgresql/postgresql/9.3-1102-jdbc41/postgresql-9.3-1102-jdbc41.jar /opt/jdbc/
 ADD http://central.maven.org/maven2/org/apache/derby/derbyclient/10.11.1.1/derbyclient-10.11.1.1.jar /opt/jdbc/
 
-ENTRYPOINT java -classpath jdbc/*:liquibase/liquibase.jar liquibase.integration.commandline.Main
+ENTRYPOINT [ "java", "-classpath", "jdbc/*:liquibase/liquibase.jar", "liquibase.integration.commandline.Main" ]
 
+CMD --help
